@@ -4,7 +4,7 @@ export default function Signature() {
   return (
     <footer className="signature">
       <a
-        href="https://github.com/jnardino/SheCodesPlus"
+        href="https://github.com/jnardino/weather-react"
         rel="noreferrer"
         target="_blank"
       >
