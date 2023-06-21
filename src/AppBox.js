@@ -31,7 +31,7 @@ export default function App() {
         <div className="col-12 col-md-4 details">
           <span>
             <i className="fa-solid fa-temperature-three-quarters"></i>
-            Feels like:
+            {" "}Feels like:
             <span className="temperature-cf feels-like">
               <span className="value">22</span>
               <sup className="unit">{" "}°C</sup>
@@ -39,7 +39,7 @@ export default function App() {
           </span>
           <span>
             <i className="fa-solid fa-wind"></i>
-            Wind:
+            {" "}Wind:
             <span className="wind">
               <span className="value">18</span>
               <span className="unit">{" "}m/s</span>
@@ -47,7 +47,7 @@ export default function App() {
           </span>
           <span>
             <i className="fa-solid fa-droplet"></i>
-            Humidity:
+            {" "}Humidity:
             <span className="humidity">
               <span className="value">88</span>
               <span className="unit">{" "}%</span>
