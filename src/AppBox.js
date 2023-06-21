@@ -12,18 +12,18 @@ export default function App() {
         <div className="col-6 col-md-4 city">
           <div className="temperature-cf main-temperature">
             <span className="value">30</span>
-            <sup className="unit">°C</sup>
+            <sup className="unit">{" "}°C</sup>
           </div>
           <span className="weather-description"></span>
           <div className="max-min">
             <span className="temperature-cf main-max-temperature">
               <span className="value">28</span>
-              <sup className="unit">°C</sup>
+              <sup className="unit">{" "}°C</sup>
             </span>
             <span>/</span>
             <span className="temperature-cf main-min-temperature">
               <span className="value">15</span>
-              <sup className="unit">°C</sup>
+              <sup className="unit">{" "}°C</sup>
             </span>
           </div>
         </div>
@@ -34,7 +34,7 @@ export default function App() {
             Feels like:
             <span className="temperature-cf feels-like">
               <span className="value">22</span>
-              <sup className="unit">°C</sup>
+              <sup className="unit">{" "}°C</sup>
             </span>
           </span>
           <span>
@@ -42,7 +42,7 @@ export default function App() {
             Wind:
             <span className="wind">
               <span className="value">18</span>
-              <span className="unit">m/s</span>
+              <span className="unit">{" "}m/s</span>
             </span>
           </span>
           <span>
@@ -50,7 +50,7 @@ export default function App() {
             Humidity:
             <span className="humidity">
               <span className="value">88</span>
-              <span className="unit">%</span>
+              <span className="unit">{" "}%</span>
             </span>
           </span>
         </div>
