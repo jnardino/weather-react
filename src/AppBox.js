@@ -1,9 +1,14 @@
 import React from "react";
 
+import axios from "axios";
 import Signature from "./Signature";
-import Header from "./Header";
 
 export default function App() {
+	const APIKEY = "9e0fb79c2f66d0cd0dcf06710976a873";
+	const APIURL = "https://api.openweathermap.org/data/2.5/"
+
+
+
   return (
     <div className="app-box">
       	<header>
