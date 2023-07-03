@@ -13,7 +13,7 @@ root.render(
 		<div className="container">
 			<Videos />
 			<Swap />
-			<AppBox />
+			<AppBox defaultCity="Vancouver"/>
 		</div>
 	</React.StrictMode>
 );
