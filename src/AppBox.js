@@ -12,6 +12,7 @@ export default function AppBox(props) {
 		setweatherData({
 			ready: true,
 			city: response.data.name,
+			country: response.data.sys.country,
 			temperature: response.data.main.temp,
 			temperatureMax: response.data.main.temp_max,
 			temperatureMin: response.data.main.temp_min,

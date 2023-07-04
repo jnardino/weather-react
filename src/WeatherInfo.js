@@ -6,7 +6,7 @@ export default function WeatherInfo(props) {
 	return (
 		<div>
 			<h1><FormattedDate/></h1>
-			<div className="city-name">{props.apiInfo.city}</div>
+			<div className="city-name">{props.apiInfo.city} - {props.apiInfo.country}</div>
 			<div className="row gy-3 weather-now">
 				<div className="col-6 col-md-4 city">
 					<div className="temperature-cf main-temperature">
