@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import axios from "axios";
-import FormattedDate from "./FormattedDate"
+import WeatherInfo from "./WeatherInfo"
 import Signature from "./Signature";
 
 export default function AppBox(props) {
@@ -43,60 +43,9 @@ export default function AppBox(props) {
 							</button>
 						</div>
 					</div>
-					<h1><FormattedDate/></h1>
 				</header>
-			<div className="city-name">{weatherData.city}</div>
-			<div className="row gy-3 weather-now">
-				<div className="col-6 col-md-4 city">
-					<div className="temperature-cf main-temperature">
-						<span className="value">{Math.round(weatherData.temperature)}</span>
-						<sup className="unit">{" "}°C</sup>
-					</div>
-					<span className="weather-description">{weatherData.description}</span>
-					<div className="max-min">
-						<span className="temperature-cf main-max-temperature">
-							<span className="value">{Math.round(weatherData.temperatureMax)}</span>
-							<sup className="unit">{" "}°C</sup>
-						</span>
-						<span>{" "}/{" "}</span>
-						<span className="temperature-cf main-min-temperature">
-							<span className="value">{Math.round(weatherData.temperatureMin)}</span>
-							<sup className="unit">{" "}°C</sup>
-						</span>
-					</div>
-				</div>
-				<div className="col-6 col-md-4 weather-icon-big">
-					<img src={weatherData.iconUrl} alt={weatherData.description}/>
-				</div>
-				<div className="col-12 col-md-4 details">
-					<span>
-						<i className="fa-solid fa-temperature-three-quarters"></i>
-						{" "}Feels like:
-						<span className="temperature-cf feels-like">
-							<span className="value">{" "}{Math.round(weatherData.realFeel)}</span>
-							<sup className="unit">{" "}°C</sup>
-						</span>
-					</span>
-					<span>
-						<i className="fa-solid fa-wind"></i>
-						{" "}Wind:
-						<span className="wind">
-							<span className="value">{" "}{Math.round(weatherData.wind)}</span>
-							<span className="unit">{" "}m/s</span>
-						</span>
-					</span>
-					<span>
-						<i className="fa-solid fa-droplet"></i>
-						{" "}Humidity:
-						<span className="humidity">
-							<span className="value">{" "}{Math.round(weatherData.humidity)}</span>
-							<span className="unit">{" "}%</span>
-						</span>
-					</span>
-				</div>
-			</div>
-			<div className="six-day-forecast"></div>
-			<Signature />
+				<WeatherInfo apiInfo={weatherData}/>
+				<Signature />
 			</div>
 		);
 	} else {
