@@ -4,6 +4,10 @@ import FormattedDate from "./FormattedDate"
 import WeatherIcon from "./WeatherIcon"
 
 export default function WeatherInfo(props) {
+	const unitText = () => {
+		return props.unitInfo === "metric" ? "°C" : "°F";
+	}
+
 	return (
 		<div>
 			<h1><FormattedDate/></h1>
@@ -12,18 +16,18 @@ export default function WeatherInfo(props) {
 				<div className="col-6 col-md-4 city">
 					<div className="temperature-cf main-temperature">
 						<span className="value">{Math.round(props.apiInfo.temperature)}</span>
-						<sup className="unit">{" "}°C</sup>
+						<sup className="unit">{" "}{unitText()}</sup>
 					</div>
 					<span className="weather-description">{props.apiInfo.description}</span>
 					<div className="max-min">
 						<span className="temperature-cf main-max-temperature">
 							<span className="value">{Math.round(props.apiInfo.temperatureMax)}</span>
-							<sup className="unit">{" "}°C</sup>
+							<sup className="unit">{" "}{unitText()}</sup>
 						</span>
 						<span>{" "}/{" "}</span>
 						<span className="temperature-cf main-min-temperature">
 							<span className="value">{Math.round(props.apiInfo.temperatureMin)}</span>
-							<sup className="unit">{" "}°C</sup>
+							<sup className="unit">{" "}{unitText()}</sup>
 						</span>
 					</div>
 				</div>
@@ -36,7 +40,7 @@ export default function WeatherInfo(props) {
 						{" "}Feels like:
 						<span className="temperature-cf feels-like">
 							<span className="value">{" "}{Math.round(props.apiInfo.realFeel)}</span>
-							<sup className="unit">{" "}°C</sup>
+							<sup className="unit">{" "}{unitText()}</sup>
 						</span>
 					</span>
 					<span>

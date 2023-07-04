@@ -7,6 +7,7 @@ import Signature from "./Signature";
 export default function AppBox(props) {
 	const [weatherData, setweatherData] = useState({ready: false});
 	const [city, setCity] = useState(props.defaultCity);
+	const [unit, setUnit] = useState("metric");
 
 	function handleResponse(response){
 		setweatherData({
@@ -25,20 +26,26 @@ export default function AppBox(props) {
 
 	function search() {
 		const APIKEY = "9e0fb79c2f66d0cd0dcf06710976a873";
-		const APIURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY}&units=metric`
+		const APIURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY}&units=${unit}`
 		axios.get(APIURL).then(handleResponse);
 	}
 
-	function handleSubmit(event){
+	function handleSubmit(event) {
 		event.preventDefault();
 		search();
 	}
 
-	function handleCityChange(event){
+	function handleCityChange(event) {
 		setCity(event.target.value);
 	}
 
-	if (weatherData.ready){
+	function convertUnit(event) {
+		event.preventDefault();
+		setUnit(unit === "metric" ? "imperial" : "metric");
+		search();
+	}
+
+	if (weatherData.ready) {
 		return (
 			<div className="app-box">
 				<header>
@@ -55,13 +62,13 @@ export default function AppBox(props) {
 							</form>
 						</div>
 						<div className="col-2 temperature-unit">
-							<button	className="btn btn-outline-secondary temperature-unit-icon"	type="button">
+							<button	className="btn btn-outline-secondary temperature-unit-icon"	type="button" onClick={convertUnit}>
 								°F
 							</button>
 						</div>
 					</div>
 				</header>
-				<WeatherInfo apiInfo={weatherData}/>
+				<WeatherInfo apiInfo={weatherData} unitInfo={unit}/>
 				<Signature />
 			</div>
 		);
