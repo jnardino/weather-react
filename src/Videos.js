@@ -10,7 +10,6 @@ export default function Videos() {
 				className="video-bg light-video"
 				src={lightSun}
 				autoPlay={true}
-				playbackRate="0.8"
 				loop={true}
 				muted={true}
 			></video>
@@ -18,7 +17,6 @@ export default function Videos() {
 				className="video-bg dark-video"
 				src={darkBorealis}
 				autoPlay={true}
-				playbackRate="0.7"
 				loop={true}
 				muted={true}
 			></video>
