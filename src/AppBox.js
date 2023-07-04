@@ -17,7 +17,7 @@ export default function AppBox(props) {
 			temperatureMax: response.data.main.temp_max,
 			temperatureMin: response.data.main.temp_min,
 			description: response.data.weather[0].description,
-			iconUrl: "https://icons-for-free.com/iconfiles/png/64/summer+sun+icon-1320186917540922857.png",
+			icon: response.data.weather[0].icon,
 			realFeel: response.data.main.feels_like,
 			wind: response.data.wind.speed,
 			humidity: response.data.main.humidity});
