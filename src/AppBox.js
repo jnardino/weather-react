@@ -71,7 +71,9 @@ export default function AppBox(props) {
 				</header>
 				<WeatherInfo apiInfo={weatherData} unitInfo={unit}/>
 			<div className="six-day-forecast">
-				<WeatherForecast />
+				<div class="row week-forecast">
+					<WeatherForecast />
+				</div>
 			</div>
 				<Signature />
 			</div>
