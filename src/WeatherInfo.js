@@ -61,7 +61,6 @@ export default function WeatherInfo(props) {
 					</span>
 				</div>
 			</div>
-			<div className="six-day-forecast"></div>
 		</div>
 	);
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo"
+import WeatherForecast from "./WeatherForecast"
 import Signature from "./Signature";
 
 export default function AppBox(props) {
@@ -69,6 +70,9 @@ export default function AppBox(props) {
 					</div>
 				</header>
 				<WeatherInfo apiInfo={weatherData} unitInfo={unit}/>
+			<div className="six-day-forecast">
+				<WeatherForecast />
+			</div>
 				<Signature />
 			</div>
 		);
