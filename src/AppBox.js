@@ -23,7 +23,8 @@ export default function AppBox(props) {
 			realFeel: response.data.main.feels_like,
 			wind: response.data.wind.speed,
 			humidity: response.data.main.humidity,
-			coordinates: response.data.coord});
+			coordinates: response.data.coord
+		});
 	}
 
 	function search() {
@@ -72,9 +73,7 @@ export default function AppBox(props) {
 				</header>
 				<WeatherInfo apiInfo={weatherData} unitInfo={unit}/>
 			<div className="six-day-forecast">
-				<div className="row week-forecast">
-					<WeatherForecast coordinates={weatherData.coordinates}/>
-				</div>
+				<WeatherForecast coordinates={weatherData.coordinates}/>
 			</div>
 				<Signature />
 			</div>
