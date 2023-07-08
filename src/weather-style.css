@@ -211,6 +211,10 @@ video {
     text-align: center;
 }
 
+.week-forecast-placeholder {
+	height: 130px;
+}
+
 /* Footer/Signature */
 
 .signature {

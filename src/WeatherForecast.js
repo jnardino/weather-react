@@ -32,9 +32,9 @@ export default function WeatherForecast(props) {
 		const APIKEY = "9e0fb79c2f66d0cd0dcf06710976a873";
 		let lat = props.coordinates.lat;
 		let lon = props.coordinates.lon;
-		const APIURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${APIKEY}`;
+		const APIURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${props.unit}&appid=${APIKEY}`;
 		axios.get(APIURL).then(handleResponse);
 
-		return null;
+		return <div className="week-forecast-placeholder"></div>;
 	}
 }

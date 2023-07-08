@@ -20,6 +20,7 @@ export default function WeatherForecastDay(props) {
 				<span className="temperature-cf-week max-temperature">
 					<span className="value">{Math.round(props.data.temp.max)}</span><sup className="unit">°</sup>
 				</span>
+				<span>{" "}</span>
 				<span className="temperature-cf-week min-temperature">
 					<span className="value">{Math.round(props.data.temp.min)}</span><sup className="unit">°</sup>
 				</span>

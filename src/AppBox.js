@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo"
@@ -45,8 +45,11 @@ export default function AppBox(props) {
 	function convertUnit(event) {
 		event.preventDefault();
 		setUnit(unit === "metric" ? "imperial" : "metric");
-		search();
 	}
+
+	useEffect (()=> {
+		search();
+	}, [unit]);
 
 	if (weatherData.ready) {
 		return (
@@ -73,7 +76,7 @@ export default function AppBox(props) {
 				</header>
 				<WeatherInfo apiInfo={weatherData} unitInfo={unit}/>
 			<div className="six-day-forecast">
-				<WeatherForecast coordinates={weatherData.coordinates}/>
+				<WeatherForecast coordinates={weatherData.coordinates} unit={unit}/>
 			</div>
 				<Signature />
 			</div>
