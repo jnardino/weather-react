@@ -212,7 +212,19 @@ video {
 }
 
 .week-forecast-placeholder {
-	height: 130px;
+	margin-top: 18px;
+	height: 117px;
+}
+
+.week-forecast-transition {
+	opacity: 0;
+	transform: translateY(-30px);
+	transition: all 0.8s ease-out;
+}
+
+.week-forecast-transition.active {
+	opacity: 1;
+	transform: translateY(0px);
 }
 
 /* Footer/Signature */

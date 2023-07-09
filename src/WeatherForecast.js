@@ -20,8 +20,8 @@ export default function WeatherForecast(props) {
 		return (
 			<div className="row week-forecast">
 				{forecast.map(function(dailyForecast, index) {
-					if (index <6) {
-						return <WeatherForecastDay data={dailyForecast} key={index}/>;
+					if (index < 6) {
+						return <WeatherForecastDay key={index} data={dailyForecast} activeDelay={index * 30}/>;
 					} else {
 						return null;
 					}

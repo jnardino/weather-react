@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import WeatherIcon from "./WeatherIcon"
 
 export default function WeatherForecastDay(props) {
+	let [activeClass, setAtiveClass] = useState();
 
 	function day() {
 		let date = new Date(props.data.dt * 1000);
@@ -12,8 +13,15 @@ export default function WeatherForecastDay(props) {
 		return weekDays[day];
 	}
 
+	useEffect(() => {
+		console.log(props.activeDelay);
+		setTimeout(() => {
+			setAtiveClass("active");
+		}, props.activeDelay);
+	}, [props.activeDelay]);
+
 	return (
-		<div className="col-2">
+		<div className={`col-2 week-forecast-transition ${activeClass}`}>
 			<div className="week-forecast-day">{day()}</div>
 			<div className="week-forecast-icon"><WeatherIcon image={props.data.weather[0].icon}/></div>
 			<div className="week-forecast-temp">
