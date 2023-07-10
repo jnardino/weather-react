@@ -14,7 +14,6 @@ export default function WeatherForecastDay(props) {
 	}
 
 	useEffect(() => {
-		console.log(props.activeDelay);
 		setTimeout(() => {
 			setAtiveClass("active");
 		}, props.activeDelay);

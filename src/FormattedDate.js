@@ -41,5 +41,5 @@ export default function FormattedDate(){
 		}
 	}
 
-	return <div>Your local time is: {weekName}, {monthName} {dayNumber} {year} - {militaryTo12HClock(hour, minutes)}</div>;
+	return <div>Today is {weekName}, {monthName} {dayNumber} {year} - {militaryTo12HClock(hour, minutes)}</div>;
 }

@@ -9,28 +9,34 @@ export default function AppBox(props) {
 	const [weatherData, setweatherData] = useState({ready: false});
 	const [city, setCity] = useState(props.defaultCity);
 	const [unit, setUnit] = useState("metric");
+	// const [geoPosition, setGeoPosition] = useState(null);
 
-	function handleResponse(response){
-		setweatherData({
-			ready: true,
-			city: response.data.name,
-			country: response.data.sys.country,
-			temperature: response.data.main.temp,
-			temperatureMax: response.data.main.temp_max,
-			temperatureMin: response.data.main.temp_min,
-			description: response.data.weather[0].description,
-			icon: response.data.weather[0].icon,
-			realFeel: response.data.main.feels_like,
-			wind: response.data.wind.speed,
-			humidity: response.data.main.humidity,
-			coordinates: response.data.coord
-		});
-	}
+	// function setGeoLocation() {
+	// 	navigator.geolocation.getCurrentPosition((position) => {
+	// 		setGeoPosition({lat: position.coords.latitude, lon: position.coords.longitude});
+	// 	});
+	// }
 
 	function search() {
 		const APIKEY = "9e0fb79c2f66d0cd0dcf06710976a873";
+		// const APIURL = `https://api.openweathermap.org/data/2.5/weather?lat=${geoPosition.lat}&lon=${geoPosition.lon}&units=${unit}&appid=${APIKEY}`
 		const APIURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY}&units=${unit}`
-		axios.get(APIURL).then(handleResponse);
+		axios.get(APIURL).then((response) => {
+			setweatherData({
+				ready: true,
+				city: response.data.name,
+				country: response.data.sys.country,
+				temperature: response.data.main.temp,
+				temperatureMax: response.data.main.temp_max,
+				temperatureMin: response.data.main.temp_min,
+				description: response.data.weather[0].description,
+				icon: response.data.weather[0].icon,
+				realFeel: response.data.main.feels_like,
+				wind: response.data.wind.speed,
+				humidity: response.data.main.humidity,
+				coordinates: response.data.coord
+			});
+		});
 	}
 
 	function handleSubmit(event) {
@@ -49,7 +55,8 @@ export default function AppBox(props) {
 
 	useEffect (()=> {
 		search();
-	}, [unit]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [unit /*, geoPosition */]);
 
 	if (weatherData.ready) {
 		return (
@@ -58,7 +65,7 @@ export default function AppBox(props) {
 					<div className="row">
 						<div className="col-10 search">
 							<form className="input-group" onSubmit={handleSubmit}>
-								<button className="btn btn-outline-secondary location-icon" type="button">
+								<button className="btn btn-outline-secondary location-icon" type="button" /*onClick={setGeoLocation}*/>
 									<i className="fa-solid fa-location-dot"></i>
 								</button>
 								<input type="text" className="form-control search-bar" placeholder="Enter a city..." onChange={handleCityChange}/>

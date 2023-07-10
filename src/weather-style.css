@@ -326,3 +326,26 @@ video {
 .dark .signature a {
     color: #dedede;
 }
+
+/*  Media Query  */
+
+@media (max-width: 576px){
+
+    .details{
+        display: none;
+    }
+
+	h1 {
+		font-size: 14px;
+		text-align: center;
+	}
+
+	.city-name {
+		font-size: 32px;
+    	text-align: center;
+	}
+
+	.signature {
+		font-size: 12px;
+	}
+}

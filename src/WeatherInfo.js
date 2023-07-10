@@ -24,7 +24,7 @@ export default function WeatherInfo(props) {
 							<span className="value">{Math.round(props.apiInfo.temperatureMax)}</span>
 							<sup className="unit">{" "}{unitText()}</sup>
 						</span>
-						<span>{" "}/{" "}</span>
+						<span>{" "}</span>
 						<span className="temperature-cf main-min-temperature">
 							<span className="value">{Math.round(props.apiInfo.temperatureMin)}</span>
 							<sup className="unit">{" "}{unitText()}</sup>
